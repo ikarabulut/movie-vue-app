@@ -1,40 +1,13 @@
 <template>
-  <div class="home">
+  <div class="movie-index">
     <h1>{{ message }}</h1>
-
     <div v-for="movie in movies" :key="movie.id">
       <h3>{{ movie.title }}</h3>
       <p>{{ movie.director }}</p>
-      <button v-on:click="showMovie(movie)">More Info</button>
+      <router-link :to="`/movieshow/${movie.id}`">
+        <a class="btn btn-primary">More info</a>
+      </router-link>
     </div>
-    <dialog id="movie-details">
-      <form method="dialog">
-        <h1>Movie Info:</h1>
-        <p>
-          Title:
-          <input type="text" v-model="currentMovie.title" />
-        </p>
-        <p>
-          year:
-          <input type="text" v-model="currentMovie.year" />
-        </p>
-        <p>
-          Plot:
-          <input type="text" v-model="currentMovie.plot" />
-        </p>
-        <p>
-          Director:
-          <input type="text" v-model="currentMovie.director" />
-        </p>
-        <p>
-          English:
-          <input type="text" v-model="currentMovie.english" />
-        </p>
-        <button v-on:click="updateMovie(currentMovie)">Update Movie</button>
-        <button v-on:click="destroyMovie(currentMovie)">Delete</button>
-        <button>close</button>
-      </form>
-    </dialog>
   </div>
 </template>
 

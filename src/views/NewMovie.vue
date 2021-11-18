@@ -44,9 +44,7 @@ export default {
       currentMovie: {},
     };
   },
-  created: function () {
-    this.indexMovies();
-  },
+  created: function () {},
   methods: {
     createMovie: function () {
       axios.post("/movies", this.newMovieParams).then(() => {
