@@ -3,6 +3,10 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
       |
+      <router-link to="/movieindex">All Movies</router-link>
+      |
+      <router-link to="/newmovie">Create Movies</router-link>
+      |
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
