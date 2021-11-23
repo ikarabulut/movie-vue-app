@@ -17,7 +17,9 @@
         </div>
         <div>
           <label>Plot:</label>
-          <input type="text" v-model="newMovieParams.plot" />
+          <input type="text" v-model="newMovieParams.plot" maxlength="250" />
+          <br />
+          <small>You have {{ 250 - newMovieParams.plot.length }} characters remaining</small>
         </div>
         <div>
           <label>Director:</label>
@@ -39,7 +41,7 @@ export default {
     return {
       message: "Create a movie!",
       movies: [],
-      newMovieParams: {},
+      newMovieParams: { plot: "" },
       errors: [],
       currentMovie: {},
     };
